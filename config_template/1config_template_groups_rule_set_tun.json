@@ -102,7 +102,6 @@
       "tag":"proxy",
       "type":"selector",
       "outbounds":[
-        "🇹🇼 台湾节点",
         "auto",
         "direct",
         "{all}"
