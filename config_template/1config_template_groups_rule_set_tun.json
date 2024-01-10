@@ -343,50 +343,13 @@
       {
         "rule_set": "geosite-telegram",
         "outbound": "📟 Telegram"
-      },
-      {
-        "rule_set":"geoip-twitter",
-        "outbound": "🐦 Twitter"
-      },
-      {
-        "rule_set": "geosite-twitter",
-        "outbound": "🐦 Twitter"
-      },
-      {
-        "rule_set": "geoip-facebook",
-        "outbound": "👤 Facebook"
-      },
-      {
-        "rule_set":["geosite-facebook","geosite-instagram"],
-        "outbound": "👤 Facebook"
-      },
-      {
-        "rule_set": "geosite-amazon",
-        "outbound": "🛍️ Amazon"
-      },
       {
         "rule_set": "geosite-apple",
         "outbound": "🍎 Apple"
       },
       {
-        "rule_set": "geosite-microsoft",
-        "outbound": "🧩 Microsoft"
-      },
-      {
-        "rule_set": "geosite-category-games",
-        "outbound": "🎮 Game"
-      },
-      {
         "rule_set": "geosite-bilibili",
         "outbound": "📺 Bilibili"
-      },
-      {
-        "rule_set": "geoip-netflix",
-        "outbound": "🎬 MediaVideo"
-      },
-      {
-        "rule_set": ["geosite-tiktok","geosite-netflix","geosite-hbo","geosite-disney","geosite-primevideo"],
-        "outbound": "🎬 MediaVideo"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
