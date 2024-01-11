@@ -33,6 +33,10 @@
         "tag": "block",
         "address": "rcode://success"
       }
+      {
+        "tag": "fakeip",
+        "address": "fakeip"
+      }
     ],
     "rules": [
       {
