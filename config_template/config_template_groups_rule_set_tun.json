@@ -70,14 +70,14 @@
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "server": "fakedns"
+        "server": "fakeip"
       },
       {
         "query_type": [
           "A",
           "AAAA"
         ],
-        "server": "fakedns"
+        "server": "fakeipip"
       }
     ],
     "fakeip": {
