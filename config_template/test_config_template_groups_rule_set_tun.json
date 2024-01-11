@@ -33,6 +33,10 @@
         "tag": "block",
         "address": "rcode://success"
       }
+      {
+        "tag": "fakeip",
+        "address": "fakeip"
+      }
     ],
     "rules": [
       {
@@ -68,8 +72,20 @@
         "rule_set": "geosite-geolocation-!cn",
         "server": "proxyDns"
       }
+      {
+        "query_type": [	
+		        "A",
+                "AAAA"
+		"rewrite_ttl": 1,
+        "server": "fakeip"
+      }
     ],
     "strategy": "ipv4_only"
+    "independent_cache": true"
+    "fakeip": {
+        "enabled": true,
+        "inet4_range": "198.18.0.0/15",
+		}
   },
   "inbounds": [
     {
@@ -256,7 +272,8 @@
         "🇺🇸 美国节点",
         "✈️ 其他节点",
         "direct"
-      ]
+      ],
+      "default": "🇹🇼 台湾节点"
     },
     {
       "tag":"🇭🇰 香港节点",
