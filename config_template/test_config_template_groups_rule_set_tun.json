@@ -66,22 +66,16 @@
       },
       {
         "clash_mode": "global",
-        "server": "proxyDns"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakedns"
+        "server": "fakeip"
       }
     ],
     "fakeip": {
       "enabled": true,
-      "inet4_range": "198.18.0.0/15"
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
     },
-    "independent_cache": true,
     "strategy": "ipv4_only"
+    "independent_cache": true
   },
   "inbounds": [
     {
@@ -351,6 +345,10 @@
         "outbound": "📺 Bilibili"
       },
       {
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "🌏 !cn"
+      },
+      {
         "ip_is_private": true,
         "outbound": "🌏 cn"
       },
@@ -378,14 +376,6 @@
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs",
         "download_detour": "direct"
       },
-      {
-        "tag": "geoip-netflix",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
-        "download_detour": "direct"
-      },
-      {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
@@ -428,13 +418,6 @@
         "download_detour": "direct"
       },
       {
-        "tag": "geosite-instagram",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/instagram.srs",
-        "download_detour": "direct"
-      },
-      {
         "tag": "geosite-apple",
         "type": "remote",
         "format": "binary",
@@ -446,41 +429,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "geosite-tiktok",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "geosite-netflix",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "geosite-hbo",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/hbo.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "geosite-disney",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "geosite-primevideo",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/primevideo.srs",
         "download_detour": "direct"
       },
       {
