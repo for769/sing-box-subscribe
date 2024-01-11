@@ -70,9 +70,21 @@
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "server": "proxyDns"
+        "server": "fakedns"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakedns"
       }
     ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15"
+    },
+    "independent_cache": true,
     "strategy": "ipv4_only"
   },
   "inbounds": [
