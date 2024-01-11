@@ -65,6 +65,13 @@
         "server": "localDns"
       },
       {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
+      },
+      {
         "clash_mode": "global",
         "server": "fakeip"
       }
