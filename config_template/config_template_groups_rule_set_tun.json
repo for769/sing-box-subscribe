@@ -33,6 +33,10 @@
         "tag": "block",
         "address": "rcode://success"
       }
+      {
+        "tag": "fakeip",
+        "address": "fakeip"
+      }
     ],
     "rules": [
       {
@@ -66,7 +70,7 @@
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "server": "proxyDns"
+        "server": "fakeip"
       }
     ],
     "strategy": "ipv4_only"
