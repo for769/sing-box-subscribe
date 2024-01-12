@@ -76,7 +76,7 @@
         "server": "proxyDns"
       }
     ],
-    "strategy": "ipv4_only"
+    "strategy": "ipv4_only",
     "fakeip": {
       "enabled": true,
       "inet4_range": "198.18.0.0/15",
