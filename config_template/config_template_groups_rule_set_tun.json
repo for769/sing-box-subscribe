@@ -358,6 +358,125 @@
       "tag": "block"
     }
   ],
+  "route": {
+    "auto_detect_interface": true,
+    "final": "proxy",
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "network": "udp",
+        "port": 443,
+        "outbound": "block"
+      },
+      {
+        "rule_set": "geosite-category-ads-all",
+        "outbound": "🛑 AdBlock"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "proxy"
+      },
+      {
+        "domain": [
+          "clash.razord.top",
+          "yacd.metacubex.one",
+          "yacd.haishan.me",
+          "d.metacubex.one"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geosite-openai",
+        "outbound": "🤖 OpenAI"
+      },
+      {
+        "rule_set": "geosite-youtube",
+        "outbound": "🌌 Google"
+      },
+      {
+        "rule_set": "geoip-google",
+        "outbound": "🌌 Google"
+      },
+      {
+        "rule_set": ["geosite-google","geosite-github"],
+        "outbound": "🌌 Google"
+      },
+      {
+        "rule_set": "geoip-telegram",
+        "outbound": "📟 Telegram"
+      },
+      {
+        "rule_set": "geosite-telegram",
+        "outbound": "📟 Telegram"
+      },
+      {
+        "rule_set":"geoip-twitter",
+        "outbound": "🐦 Twitter"
+      },
+      {
+        "rule_set": "geosite-twitter",
+        "outbound": "🐦 Twitter"
+      },
+      {
+        "rule_set": "geoip-facebook",
+        "outbound": "👤 Facebook"
+      },
+      {
+        "rule_set":["geosite-facebook","geosite-instagram"],
+        "outbound": "👤 Facebook"
+      },
+      {
+        "rule_set": "geosite-amazon",
+        "outbound": "🛍️ Amazon"
+      },
+      {
+        "rule_set": "geosite-apple",
+        "outbound": "🍎 Apple"
+      },
+      {
+        "rule_set": "geosite-microsoft",
+        "outbound": "🧩 Microsoft"
+      },
+      {
+        "rule_set": "geosite-category-games",
+        "outbound": "🎮 Game"
+      },
+      {
+        "rule_set": "geosite-bilibili",
+        "outbound": "📺 Bilibili"
+      },
+      {
+        "rule_set": "geoip-netflix",
+        "outbound": "🎬 MediaVideo"
+      },
+      {
+        "rule_set": ["geosite-tiktok","geosite-netflix","geosite-hbo","geosite-disney","geosite-primevideo"],
+        "outbound": "🎬 MediaVideo"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "🌏 !cn"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "🌏 cn"
+      },
+      {
+        "rule_set": "geoip-cn",
+        "outbound": "🌏 cn"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "outbound": "🌏 cn"
+      }
+    ],
     "rule_set": [
       {
         "tag": "geoip-google",
