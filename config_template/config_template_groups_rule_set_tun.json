@@ -32,10 +32,6 @@
       {
         "tag": "block",
         "address": "rcode://success"
-      },
-      {
-        "tag": "remote",
-        "address": "fakeip"
       }
     ],
     "rules": [
@@ -57,13 +53,6 @@
         "disable_cache": true
       },
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "remote"
-      },
-      {
         "rule_set": "geosite-cn",
         "server": "localDns"
       },   
@@ -76,11 +65,6 @@
         "server": "proxyDns"
       }
     ],
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15"
-    },
-    "independent_cache": true
     "strategy": "ipv4_only"
   },
   "inbounds": [
