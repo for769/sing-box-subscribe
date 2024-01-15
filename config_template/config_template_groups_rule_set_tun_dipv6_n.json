@@ -32,21 +32,9 @@
       {
         "tag": "block",
         "address": "rcode://success"
-      },
-      {
-        "tag": "remote",
-        "address": "fakeip"
       }
     ],
     "rules": [
-      {
-        "domain": [
-          "ghproxy.com",
-          "cdn.jsdelivr.net",
-          "testingcf.jsdelivr.net"
-        ],
-        "server": "localDns"
-      },
       {
         "rule_set": "geosite-category-ads-all",
         "server": "block"
@@ -55,18 +43,7 @@
         "outbound": "any",
         "server": "localDns",
         "disable_cache": true
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "remote"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "localDns"
-      },   
+      }, 
       {
         "clash_mode": "direct",
         "server": "localDns"
@@ -76,13 +53,7 @@
         "server": "proxyDns"
       }
     ],
-    "strategy": "ipv4_only",
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
-    "independent_cache": true
+    "strategy": "ipv4_only"
   },
   "inbounds": [
     {
@@ -167,15 +138,6 @@
       {
         "clash_mode": "global",
         "outbound": "proxy"
-      },
-      {
-        "domain": [
-          "clash.razord.top",
-          "yacd.metacubex.one",
-          "yacd.haishan.me",
-          "d.metacubex.one"
-        ],
-        "outbound": "direct"
       }
     ],
     "rule_set": [
