@@ -115,7 +115,7 @@
         "{all}"
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "10080m",
+      "interval": "1d",
       "tolerance": 50
     },
     {
