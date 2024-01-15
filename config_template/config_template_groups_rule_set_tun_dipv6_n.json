@@ -103,20 +103,9 @@
       "tag":"proxy",
       "type":"selector",
       "outbounds":[
-        "auto",
         "direct",
         "{all}"
       ]
-    },
-    {
-      "tag":"auto",
-      "type":"urltest",
-      "outbounds":[
-        "{all}"
-      ],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "55m",
-      "tolerance": 50
     },
     {
       "type": "direct",
