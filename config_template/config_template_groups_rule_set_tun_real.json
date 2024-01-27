@@ -58,7 +58,11 @@
       {
         "rule_set": "geosite-cn",
         "server": "localDns"
-      }, 
+      },
+      {
+        "rule_set": "geoip-cn",
+        "server": "localDns"
+      },
       {
         "query_type": [
           "A",
