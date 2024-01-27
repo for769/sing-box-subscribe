@@ -71,9 +71,8 @@
 		        "query_type": ["A", "AAAA"]
 		    },
 			{
-			    "not": {
-				    "rule_set": "geoip-cn"
-			    }
+				"rule_set": "geoip-cn",
+				"invert": true
 			}
 		],
         "server": "remote"
