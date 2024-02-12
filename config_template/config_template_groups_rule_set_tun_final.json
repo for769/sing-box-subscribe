@@ -54,7 +54,6 @@
       {
         "outbound": "any",
         "server": "localDns",
-		"disable_cache": true
       },
       {
         "query_type": [
@@ -62,7 +61,7 @@
           "AAAA"
         ],
         "server": "remote",
-		"rewrite_ttl": 1
+        "rewrite_ttl": 1
       },
       {
         "rule_set": "geosite-cn",
@@ -83,6 +82,7 @@
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
     },
+    "final": "localDns",
     "independent_cache": true
   },
   "inbounds": [
