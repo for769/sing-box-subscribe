@@ -53,7 +53,7 @@
       },
       {
         "outbound": "any",
-        "server": "localDns",
+        "server": "localDns"
       },
       {
         "query_type": [
