@@ -61,7 +61,7 @@
           "AAAA"
         ],
         "server": "remote",
-        "rewrite_ttl": 1
+        "rewrite_ttl": 1,
       },
       {
         "rule_set": "geosite-cn",
