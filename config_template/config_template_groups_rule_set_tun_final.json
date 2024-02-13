@@ -56,7 +56,6 @@
         "server": "localDns"
       },
       {
-        "inbound": "tun",
         "query_type": [
           "A",
           "AAAA"
