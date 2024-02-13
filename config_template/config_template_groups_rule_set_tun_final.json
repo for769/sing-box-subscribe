@@ -56,6 +56,7 @@
         "server": "localDns"
       },
       {
+        "inbound": "tun",
         "query_type": [
           "A",
           "AAAA"
@@ -76,6 +77,7 @@
         "server": "proxyDns"
       }
     ],
+	"final": "localDns",
     "fakeip": {
       "enabled": true,
       "inet4_range": "198.18.0.0/15",
@@ -107,6 +109,14 @@
       "listen": "127.0.0.1",
       "listen_port": 7890,
       "sniff": true
+    },
+	{
+      "tag": "loop-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7891,
+      "sniff": true,
+      "domain_strategy": "prefer_ipv4"
     }
   ],
   "outbounds": [
@@ -123,51 +133,51 @@
       "tag":"🤖 OpenAI",
       "type":"selector",
       "outbounds":[
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "✈️ 其他节点"
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ],
-      "default": "🇹🇼 台湾节点"
+      "default": "TaiWan"
     },
     {
       "tag":"🌌 Google",
       "type":"selector",
       "outbounds":[
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "✈️ 其他节点"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ],
-      "default": "🇹🇼 台湾节点"
+      "default": "TaiWan"
     },
     {
       "tag":"📟 Telegram",
       "type":"selector",
       "outbounds":[
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "✈️ 其他节点"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ],
-      "default": "🇸🇬 狮城节点"
+      "default": "Singapore"
     },
     {
       "tag":"🍎 Apple",
       "type":"selector",
       "outbounds":[
         "direct",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点",
-        "✈️ 其他节点"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ]
     },
     {
@@ -175,12 +185,12 @@
       "type":"selector",
       "outbounds":[
         "direct",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点"
+        "HongKong",
+        "TaiWan"
       ]
     },
     {
-      "tag":"🇭🇰 香港节点",
+      "tag":"HongKong",
       "type":"selector",
       "outbounds":[
         "{all}",
@@ -191,7 +201,7 @@
       ]
     },
     {
-      "tag":"🇹🇼 台湾节点",
+      "tag":"TaiWan",
       "type":"selector",
       "outbounds":[
         "{all}",
@@ -202,7 +212,7 @@
       ]
     },
     {
-      "tag":"🇸🇬 狮城节点",
+      "tag":"Singapore",
       "type":"selector",
       "outbounds":[
         "{all}",
@@ -213,7 +223,7 @@
       ]
     },
     {
-      "tag":"🇯🇵 日本节点",
+      "tag":"Japan",
       "type":"selector",
       "outbounds":[
         "{all}",
@@ -224,7 +234,7 @@
       ]
     },
     {
-      "tag":"🇺🇸 美国节点",
+      "tag":"America",
       "type":"selector",
       "outbounds":[
         "{all}",
@@ -235,7 +245,7 @@
       ]
     },
     {
-      "tag":"✈️ 其他节点",
+      "tag":"Others",
       "type":"selector",
       "outbounds":[
         "{all}",
@@ -282,6 +292,12 @@
     {
       "type": "block",
       "tag": "block"
+    },
+	{
+      "tag": "loop",
+      "type": "socks",
+      "server": "127.0.0.1",
+      "server_port": 7891
     }
   ],
   "route": {
@@ -361,6 +377,13 @@
       {
         "rule_set": "geosite-cn",
         "outbound": "🌏 cn"
+      },
+	  {
+        "inbound": [
+          "tun",
+          "mixed"
+        ],
+        "outbound": "loop"
       }
     ],
     "rule_set": [
