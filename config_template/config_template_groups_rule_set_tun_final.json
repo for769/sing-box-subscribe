@@ -76,7 +76,6 @@
         "server": "proxyDns"
       }
     ],
-    "strategy": "ipv4_only",
     "fakeip": {
       "enabled": true,
       "inet4_range": "198.18.0.0/15",
@@ -105,11 +104,19 @@
       }
     },
     {
+      "tag": "mixed",
       "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 7890,
       "sniff": true,
-      "users": []
+    },
+    {
+      "tag": "loop-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7891,
+      "sniff": true,
+      "domain_strategy": "prefer_ipv4"
     }
   ],
   "outbounds": [
@@ -285,6 +292,12 @@
     {
       "type": "block",
       "tag": "block"
+    },
+    {
+      "tag": "loop",
+      "type": "socks",
+      "server": "127.0.0.1",
+      "server_port": 7891
     }
   ],
   "route": {
@@ -364,6 +377,13 @@
       {
         "rule_set": "geosite-cn",
         "outbound": "🌏 cn"
+      },
+      {
+        "inbound": [
+          "tun",
+          "mixed"
+        ],
+        "outbound": "loop"
       }
     ],
     "rule_set": [
